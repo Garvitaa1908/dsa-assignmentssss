@@ -11,32 +11,22 @@ void interleaveQueue(queue<int>& q) {
 
     int halfSize = q.size() / 2;
     stack<int> s;
-
-    // Step 1: Push first half into stack (reverses order)
     for (int i = 0; i < halfSize; i++) {
         s.push(q.front());
         q.pop();
     }
-
-    // Step 2: Enqueue back stack elements to queue (so first half reversed goes to back)
     while (!s.empty()) {
         q.push(s.top());
         s.pop();
     }
-
-    // Step 3: Move first half (reversed second half) to the back
     for (int i = 0; i < halfSize; i++) {
         q.push(q.front());
         q.pop();
     }
-
-    // Step 4: Again push first half into stack
     for (int i = 0; i < halfSize; i++) {
         s.push(q.front());
         q.pop();
     }
-
-    // Step 5: Interleave elements of stack (first half) and queue (second half)
     while (!s.empty()) {
         q.push(s.top());
         s.pop();
@@ -83,3 +73,4 @@ int main() {
 
     return 0;
 }
+
