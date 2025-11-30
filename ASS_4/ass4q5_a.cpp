@@ -7,16 +7,12 @@ class StackUsingTwoQueues {
 
 public:
     void push(int x) {
-        // Step 1: Move all elements from q1 to q2
         while (!q1.empty()) {
             q2.push(q1.front());
             q1.pop();
         }
 
-        // Step 2: Push new element into q1
         q1.push(x);
-
-        // Step 3: Move everything back from q2 to q1
         while (!q2.empty()) {
             q1.push(q2.front());
             q2.pop();
@@ -99,4 +95,5 @@ int main() {
     } while (choice != 5);
 
     return 0;
+
 }
