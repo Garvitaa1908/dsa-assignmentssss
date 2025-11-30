@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#define SIZE 5   // Maximum size of the circular queue
+#define SIZE 5   
 
 class CircularQueue {
     int arr[SIZE];
@@ -125,4 +125,5 @@ int main() {
 
     return 0;
 }
+
 
