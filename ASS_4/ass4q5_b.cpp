@@ -8,9 +8,7 @@ class StackUsingOneQueue {
 public:
     void push(int x) {
         int size = q.size();
-        q.push(x); // Add new element
-
-        // Rotate elements behind the new one
+        q.push(x);
         for (int i = 0; i < size; i++) {
             q.push(q.front());
             q.pop();
@@ -94,3 +92,4 @@ int main() {
 
     return 0;
 }
+
