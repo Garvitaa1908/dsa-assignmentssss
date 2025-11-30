@@ -12,33 +12,25 @@ public:
         front = -1;
         rear = -1;
     }
-
-    // Check if queue is empty
     bool isEmpty() {
         return (front == -1);
     }
-
-    // Check if queue is full
     bool isFull() {
         return ((rear + 1) % SIZE == front);
     }
-
-    // Add element to the queue
     void enqueue(int item) {
         if (isFull()) {
             cout << "Queue Overflow! Cannot insert " << item << endl;
             return;
         }
 
-        if (front == -1)  // First element
+        if (front == -1)  
             front = 0;
 
         rear = (rear + 1) % SIZE;
         arr[rear] = item;
         cout << "Enqueued: " << item << endl;
     }
-
-    // Remove element from the queue
     void dequeue() {
         if (isEmpty()) {
             cout << "Queue Underflow! No elements to delete." << endl;
@@ -48,14 +40,11 @@ public:
         cout << "Dequeued: " << arr[front] << endl;
 
         if (front == rear) {
-            // Only one element was present
             front = rear = -1;
         } else {
             front = (front + 1) % SIZE;
         }
     }
-
-    // Display the element at the front
     void peek() {
         if (isEmpty()) {
             cout << "Queue is empty!" << endl;
@@ -63,8 +52,6 @@ public:
         }
         cout << "Front element: " << arr[front] << endl;
     }
-
-    // Display all elements in the queue
     void display() {
         if (isEmpty()) {
             cout << "Queue is empty!" << endl;
@@ -138,3 +125,4 @@ int main() {
 
     return 0;
 }
+
